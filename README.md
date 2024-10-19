@@ -1,3 +1,31 @@
+**To Do List**
+
+**Description**
+This is a simple To-Do List application built using HTML, CSS, and JavaScript. It allows users to add and delete tasks once completed or no longer needed. The project demonstrates basic DOM manipulation, event handling, and styling with CSS.
+
+**Features**
+Add a task to the list by typing in the input box and pressing the "Add" button or hitting the "Enter" key.
+Each task is displayed with a delete button.
+Tasks can be removed from the list by clicking the delete button.
+
+**Technologies Used**
+HTML: Structure and content of the web page.
+CSS: Styling and layout of the application.
+JavaScript: Handles task addition, deletion, and dynamic updates to the DOM.
+
+**How It Works**
+
+*Adding a Task:*
+The user types a task in the input field.
+The task is added to the list below the input field after clicking the "Add" button (or pressing Enter).
+Each task appears with a delete button next to it.
+
+*Deleting a Task:*
+When clicking the delete button next to a task, that specific task is removed from the list.
+
+
+**Calculator**
+
 This is a simple calculator built using HTML, CSS, and JavaScript. It performs basic arithmetic operations like addition, subtraction, multiplication, and division.
 
 **Features**
