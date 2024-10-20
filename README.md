@@ -1,3 +1,19 @@
+**Character Count**
+This is a simple web-based Character Count Application that allows users to input text and provides real-time feedback on the number of characters typed and the remaining characters allowed. The maximum limit for text input is 200 characters.
+
+**Features**
+Real-time character count display.
+Maximum character limit of 200.
+Displays the number of characters remaining.
+Responsive design using Flexbox.
+A visually appealing gradient background for the page.
+
+**Technologies Used**
+HTML5: For structuring the webpage.
+CSS3: For styling and layout, including flexbox and gradient background.
+JavaScript: For implementing the character count functionality dynamically.
+
+
 **Form Validation**
 
 Registration Form
