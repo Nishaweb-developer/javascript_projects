@@ -1,3 +1,34 @@
+**Form Validation**
+
+Registration Form
+
+This project is a simple Registration Form built using HTML, CSS, and JavaScript. It allows users to enter their details and validates the form inputs before submission.
+
+**Demo**
+
+You can view a live project demo here: **https://nishaweb-developer.github.io/javascript_projects/form_validation.html**
+
+**Features**
+
+Custom form validation using JavaScript.
+
+Responsive and aesthetically pleasing design.
+
+Error messages are displayed for invalid inputs.
+
+Reset button to clear form fields.
+
+Submit button to send user details.
+
+**Technologies Used**
+
+HTML5: Used to create the structure of the form.
+
+CSS3: Used for styling the form, including gradient backgrounds, input styling, and hover effects.
+
+JavaScript: Used for client-side form validation to ensure the user provides correct information before submission.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **To Do List**
 
 **Description**
