@@ -1,4 +1,41 @@
+
+# Rock, Paper, Scissors Game 🎮
+
+This is a simple Rock, Paper, Scissors game built using HTML and JavaScript. The game allows users to play against the computer by selecting Rock, Paper, or Scissors, and it determines the winner based on the standard rules of the game.
+
+## Features ✨
+
+- Play against the computer with three choices: Rock, Paper, or Scissors.
+- The computer makes a random choice for every round.
+- Alerts display the results after each round, showing what the player and the computer chose, as well as the outcome (win, lose, or tie).
+
+## How to Play 🎯
+
+1. Open the game in your browser.
+2. Click on one of the three buttons: **Rock**, **Paper**, or **Scissors**.
+3. The computer will randomly select its move.
+4. An alert will show the results of the round, including both the player's and computer's choices and the result (win, lose, or tie).
+
+## Future Improvements 🚀
+
+- Add styling to enhance the visual appeal of the game.
+- Display the result directly on the webpage instead of using alert boxes.
+- Keep track of the score (player vs. computer) across multiple rounds.
+- Add more animations or sound effects for user interaction.
+
+## Technologies Used 🛠️
+
+- HTML
+- JavaScript
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Character Count**
+
+
 This is a simple web-based Character Count Application that allows users to input text and provides real-time feedback on the number of characters typed and the remaining characters allowed. The maximum limit for text input is 200 characters.
 
 **Features**
@@ -13,7 +50,7 @@ HTML5: For structuring the webpage.
 CSS3: For styling and layout, including flexbox and gradient background.
 JavaScript: For implementing the character count functionality dynamically.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Form Validation**
 
 Registration Form
