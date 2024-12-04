@@ -4,141 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #result {
+            width: 300px;
+            height: 50px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border: 2px solid #87ceeb;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            text-align: right;
+            padding: 10px;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #87ceeb;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #4682b4;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <p><button onclick="
-            calculation +='1';
-            console.log(calculation);
+        <!-- Editable result display -->
+        <div id="result" contenteditable="true" oninput="validateInput()"></div>
 
-            ">1</button>
-            <button  onclick="
-            calculation +='2';
-            console.log(calculation);
+        <!-- Calculator buttons -->
+        <div class="buttons">
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button onclick="appendToResult(' / ')">/</button>
+            
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button onclick="appendToResult(' * ')">*</button>
+            
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button onclick="appendToResult(' - ')">-</button>
+            
+            <button onclick="appendToResult('0')">0</button>
+            <button onclick="appendToResult('.')">.</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToResult(' + ')">+</button>
+        </div>
 
-            ">2</button>
-
-            <button  onclick="
-            calculation +='3';
-            console.log(calculation);
-
-            ">3</button>
-
-            <button
-            onclick="
-            calculation +=' + ';
-            console.log(calculation);
-            ">+</button>
-
-           
+        <p>
+            <button onclick="clearCalculation()">Clear</button>
         </p>
     </div>
 
-
-    <p><button onclick="
-        calculation +='4';
-        console.log(calculation);
-
-        ">4</button>
-
-        <button  onclick="
-        calculation +='5';
-        console.log(calculation);
-
-        ">5</button>
-
-        <button  onclick="
-        calculation +='6';
-        console.log(calculation);
-
-        ">6</button>
-
-        <button
-        onclick="
-        calculation +=' - ';
-        console.log(calculation);
-        ">-</button>
-
-        <!-- <button
-        onclick="
-        calculation =eval(calculation);
-        console.log(calculation);
-        ">=</button> -->
-    </p>
-
-
-    <p><button onclick="
-        calculation +='7';
-        console.log(calculation);
-
-        ">7</button>
-
-        <button  onclick="
-        calculation +='8';
-        console.log(calculation);
-
-        ">8</button>
-
-        <button  onclick="
-        calculation +='9';
-        console.log(calculation);
-
-        ">9</button>
-
-        <button
-        onclick="
-        calculation +=' * ';
-        console.log(calculation);
-        ">*</button>
-
-        <!-- <button
-        onclick="
-        calculation =eval(calculation);
-        console.log(calculation);
-        ">=</button> -->
-    </p>
-
-    <p><button onclick="
-        calculation +='0';
-        console.log(calculation);
-
-        ">0</button>
-
-        <button  onclick="
-        calculation +=' . ';
-        console.log(calculation);
-
-        ">.</button>
-
-        <button  onclick="
-        calculation = eval(calculation);
-        console.log(calculation);
-
-        ">=</button>
-
-        <button
-        onclick="
-        calculation +=' / ';
-        console.log(calculation);
-        ">/</button>
-
-
-        <button  onclick="
-        calculation =' ';
-        console.log('Cleared');
-        ">Clear</button>
-
-        <!-- <button
-        onclick="
-        calculation =eval(calculation);
-        console.log(calculation);
-        ">=</button> -->
-    </p>
-
     <script>
-        let calculation = '';
-       
+        // Function to append clicked button values to the result div
+        function appendToResult(value) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerText += value;
+        }
+
+        // Allow only numbers and basic arithmetic operators in the result div
+        function validateInput() {
+            const resultDiv = document.getElementById('result');
+            // Regular expression to allow numbers, operators, and spaces
+            const validInput = /^[0-9+\-*/. ]*$/;
+            if (!validInput.test(resultDiv.innerText)) {
+                resultDiv.innerText = resultDiv.innerText.replace(/[^0-9+\-*/. ]/g, '');
+            }
+        }
+
+        // Perform the calculation based on the user input
+        function calculateResult() {
+            const resultDiv = document.getElementById('result');
+            
+                const expression = resultDiv.innerText;
+                const result = eval(expression); // Use eval to calculate
+                resultDiv.innerText = result; // Display the result
+           
+        }
+
+        // Clear the result div
+        function clearCalculation() {
+            document.getElementById('result').innerText = '';
+        }
     </script>
 </body>
 </html>
